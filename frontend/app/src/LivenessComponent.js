@@ -77,6 +77,7 @@ export function LivenessComponent() {
           }}
           onError={(error) => {
             console.error(error);
+            console.log(error);
             // window.location.reload()
           }}
         />
