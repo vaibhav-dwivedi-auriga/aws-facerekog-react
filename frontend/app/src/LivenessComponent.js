@@ -11,7 +11,7 @@ export function LivenessComponent() {
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     region:'us-east-1'
   }
-  const baseUrl = "https://aws-facerekog-react-backend.vercel.app/"
+  const baseUrl = "https://aws-facerekog-react-backend.vercel.app"
   const toastConfig = {
     position: "top-center",
     autoClose: 3000,
