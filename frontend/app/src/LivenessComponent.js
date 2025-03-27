@@ -24,7 +24,7 @@ export function LivenessComponent() {
   useEffect(() => {
     const fetchSessionId = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/create-liveness-session");
+        const response = await fetch("https://aws-facerekog-react-gz3v8kqs5.vercel.app/api/create-liveness-session");
         const data = await response.json();
         setSessionId(data.sessionId);
         setLoading(false);
@@ -38,7 +38,7 @@ export function LivenessComponent() {
 
   const handleAnalysisComplete = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/get-liveness-results?sessionId=${sessionId}`);
+      const response = await fetch(`https://aws-facerekog-react-gz3v8kqs5.vercel.app/api/get-liveness-results?sessionId=${sessionId}`);
       const data = await response.json();
       console.log(data);
 

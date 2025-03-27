@@ -6,7 +6,11 @@ const cors = require("cors");
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(cors({
+  origin:'https://aws-facerekog-react-ljtj.vercel.app/',
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(express.json());
 
 // Configure AWS SDK with direct credentials
