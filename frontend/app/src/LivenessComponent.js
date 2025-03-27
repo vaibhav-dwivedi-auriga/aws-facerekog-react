@@ -7,8 +7,8 @@ export function LivenessComponent() {
   const [loading, setLoading] = useState(true);
   const [sessionId, setSessionId] = useState(null);
   const awsConfig = {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
     region:'us-east-1'
   }
   const baseUrl = "https://aws-facerekog-react-backend.vercel.app"
