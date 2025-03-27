@@ -47,7 +47,7 @@ app.get("/api/create-liveness-session", async (req, res) => {
     res.json({ data, sessionId: data.SessionId });
   } catch (error) {
     console.error("Error creating session:", error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error, error: error.message });
   }
 });
 
@@ -67,7 +67,7 @@ app.get("/api/get-liveness-results", async (req, res) => {
     res.json({ data, isLive: data.Confidence > 90 });
   } catch (error) {
     console.error("Error fetching results:", error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error, error: error.message });
   }
 });
 
