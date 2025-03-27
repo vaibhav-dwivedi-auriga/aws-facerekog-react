@@ -29,14 +29,14 @@ AWS.config.update({
   region: process.env.AWS_REGION || 'us-east-1',
 });
 
-// Initialize Rekognition
+
 const rekognition = new AWS.Rekognition();
 
 app.get("/", (req,res)=>{
   res.send("Welcome to FaceLiveness backend services");
 })
 
-// Route to create a liveness session
+
 app.get("/api/create-liveness-session", async (req, res) => {
   try {
     const params = {
@@ -51,7 +51,7 @@ app.get("/api/create-liveness-session", async (req, res) => {
   }
 });
 
-// Route to get liveness session results
+
 app.get("/api/get-liveness-results", async (req, res) => {
   try {
     const { sessionId } = req.query;
@@ -71,7 +71,6 @@ app.get("/api/get-liveness-results", async (req, res) => {
   }
 });
 
-// for angular
 
 app.post("/api/get-liveness-results", async (req, res) => {
     try {
@@ -108,8 +107,9 @@ app.post("/api/get-liveness-results", async (req, res) => {
         face.Confidence > 90 &&
         face.EyesOpen?.Value &&
         face.MouthOpen?.Confidence > 90;
+        console.log("Is the Human Live: ", isLive, "Confidence Level: ",face.Confidence, "Eyes Open: ", face.EyesOpen?.Value )
 
-        res.    json({ isLive, faceAttributes: face });
+        res.json({ isLive, faceAttributes: face });
         // res.json({ data, isLive: data.Confidence > 90 });
       } catch (error) {
         console.error("Error fetching results:", error);
@@ -117,7 +117,7 @@ app.post("/api/get-liveness-results", async (req, res) => {
       }
   });
 
-// Start the server
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
