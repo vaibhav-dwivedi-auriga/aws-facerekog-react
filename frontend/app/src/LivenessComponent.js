@@ -11,6 +11,7 @@ export function LivenessComponent() {
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     region:'us-east-1'
   }
+  const baseUrl = "https://aws-facerekog-react-backend.vercel.app/"
   const toastConfig = {
     position: "top-center",
     autoClose: 3000,
@@ -21,10 +22,12 @@ export function LivenessComponent() {
     progress: undefined,
   }
 
+  
+
   useEffect(() => {
     const fetchSessionId = async () => {
       try {
-        const response = await fetch("https://aws-facerekog-react.vercel.app/api/create-liveness-session");
+        const response = await fetch(`${baseUrl}/api/create-liveness-session`);
         const data = await response.json();
         setSessionId(data.sessionId);
         setLoading(false);
@@ -38,7 +41,7 @@ export function LivenessComponent() {
 
   const handleAnalysisComplete = async () => {
     try {
-      const response = await fetch(`https://aws-facerekog-react.vercel.app/api/get-liveness-results?sessionId=${sessionId}`);
+      const response = await fetch(`${baseUrl}api/get-liveness-results?sessionId=${sessionId}`);
       const data = await response.json();
       console.log(data);
 
