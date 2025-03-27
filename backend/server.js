@@ -14,7 +14,7 @@ app.use(cors({
   origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: [
-    ['Access-Control-Allow-Origin', 'https://aws-facerekog-react-ljtj.vercel.app/'],
+    ['Access-Control-Allow-Origin', 'https://aws-facerekog-react-ljtj.vercel.app'],
     ['Access-Control-Allow-Credentials', 'true'],
     ['Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'],
     ['Access-Control-Allow-Headers', 'Content-Type, Authorization'],
