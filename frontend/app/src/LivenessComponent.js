@@ -77,7 +77,7 @@ export function LivenessComponent() {
           }}
           onError={(error) => {
             console.error(error);
-            window.location.reload()
+            // window.location.reload()
           }}
         />
         <ToastContainer/>
