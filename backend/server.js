@@ -27,6 +27,10 @@ AWS.config.update({
 // Initialize Rekognition
 const rekognition = new AWS.Rekognition();
 
+app.get("/", (req,res)=>{
+  res.send("Welcome to FaceLiveness backend services");
+})
+
 // Route to create a liveness session
 app.get("/api/create-liveness-session", async (req, res) => {
   try {
