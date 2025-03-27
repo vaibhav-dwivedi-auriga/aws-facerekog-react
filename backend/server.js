@@ -6,8 +6,8 @@ const cors = require("cors");
 const app = express();
 const port = 5000;
 const allowedOrigins = [
-  "https://aws-facerekog-react-ljtj-vaibhav-dwivedis-projects-b50f3d64.vercel.app/",
-  "https://aws-facerekog-react-ljtj.vercel.app/"
+  "https://aws-facerekog-react-ljtj-vaibhav-dwivedis-projects-b50f3d64.vercel.app",
+  "https://aws-facerekog-react-ljtj.vercel.app"
 ]
 
 app.use(cors({
