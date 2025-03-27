@@ -41,7 +41,7 @@ export function LivenessComponent() {
 
   const handleAnalysisComplete = async () => {
     try {
-      const response = await fetch(`${baseUrl}api/get-liveness-results?sessionId=${sessionId}`);
+      const response = await fetch(`${baseUrl}/api/get-liveness-results?sessionId=${sessionId}`);
       const data = await response.json();
       console.log(data);
 
@@ -77,8 +77,7 @@ export function LivenessComponent() {
           }}
           onError={(error) => {
             console.error(error);
-            console.log(error);
-            // window.location.reload()
+            window.location.reload()
           }}
         />
         <ToastContainer/>
