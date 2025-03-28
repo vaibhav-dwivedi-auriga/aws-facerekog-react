@@ -44,6 +44,13 @@ export function LivenessComponent() {
       const response = await fetch(`${baseUrl}/api/get-liveness-results?sessionId=${sessionId}`);
       const data = await response.json();
       console.log(data);
+      const requestPayload = {
+        sessionId
+      }
+      window.parent.postMessage(
+        { type: "api-response-liveness-results", payload: { request: requestPayload, response: data } },
+        "*"
+      );
 
       if (data.isLive) {
         console.log("User is live");
