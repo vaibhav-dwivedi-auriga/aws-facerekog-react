@@ -107,7 +107,6 @@ app.post("/api/get-liveness-results", async (req, res) => {
         face.Confidence > 90 &&
         face.EyesOpen?.Value &&
         face.MouthOpen?.Confidence > 90;
-        console.log("Is the Human Live: ", isLive, "Confidence Level: ",face.Confidence, "Eyes Open: ", face.EyesOpen?.Value )
 
         res.json({ isLive, faceAttributes: face, fetchStatus:"Success" });
         // res.json({ data, isLive: data.Confidence > 90 });
