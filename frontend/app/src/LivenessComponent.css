@@ -22,6 +22,7 @@ body {
   height: 500px;        
 }
 
+
 @media (max-width: 768px) {
   .liveness-container {
     width: 90%;         
@@ -59,17 +60,6 @@ body {
   .liveness-container .amplify-liveness-start-screen-warning {
     top: 15px;           
     font-size: 12px;       
-    padding: 6px;
-  }
-  .amplify-liveness-toast__message {
-    font-size: medium;
-  }
-}
-
-@media (max-width: 430px) { 
-  .liveness-container .amplify-liveness-start-screen-warning {
-    top: 15px;           
-    font-size: 12px;     
     padding: 6px;
   }
   .amplify-liveness-toast__message {
