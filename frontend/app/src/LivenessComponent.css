@@ -53,7 +53,7 @@ body {
 
 
 @media (max-width: 480px) {
-  .liveness-container .aws-liveness-warning {
+  .liveness-container .amplify-liveness-start-screen-warning {
     top: 15px;           
     font-size: 12px;       
     padding: 6px;
