@@ -35,6 +35,9 @@ body {
     width: 90%;        
     height: 300px;      
   }
+  .amplify-liveness-toast__message {
+    font-size: medium;
+  }
 }
 
 
@@ -58,6 +61,20 @@ body {
     font-size: 12px;       
     padding: 6px;
   }
+  .amplify-liveness-toast__message {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 430px) { 
+  .liveness-container .amplify-liveness-start-screen-warning {
+    top: 15px;           
+    font-size: 12px;     
+    padding: 6px;
+  }
+  .amplify-liveness-toast__message {
+    font-size: medium;
+  }
 }
 
 
@@ -78,5 +95,8 @@ body {
 @media (max-width: 360px) {
   .liveness-container {
     height: 250px;      
+  }
+  .amplify-liveness-toast__message {
+    font-size: medium;
   }
 }
