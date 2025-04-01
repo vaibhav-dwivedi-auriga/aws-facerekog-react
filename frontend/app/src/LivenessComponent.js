@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaceLivenessDetector } from "@aws-amplify/ui-react-liveness";
 import { ThemeProvider, Loader } from "@aws-amplify/ui-react";
 import { ToastContainer, toast } from 'react-toastify';
+import './LivenessComponent.css';
 
 export function LivenessComponent() {
   const [loading, setLoading] = useState(true);
@@ -11,6 +12,7 @@ export function LivenessComponent() {
     secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
     region:'us-east-1'
   }
+  // const baseUrl = "http://localhost:5000"
   const baseUrl = "https://aws-facerekog-react-backend.vercel.app"
   const toastConfig = {
     position: "top-center",
@@ -74,7 +76,7 @@ export function LivenessComponent() {
       {loading ? (
         <Loader />
       ) : (
-        <>
+        <div className="liveness-container">
         <FaceLivenessDetector
           sessionId={sessionId}
           region="us-east-1"
@@ -88,7 +90,7 @@ export function LivenessComponent() {
           }}
         />
         <ToastContainer/>
-        </>
+        </div>
       )}
     </ThemeProvider>
     </div>
