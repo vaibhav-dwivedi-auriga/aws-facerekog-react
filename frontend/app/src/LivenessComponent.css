@@ -1,11 +1,14 @@
-/* Container that holds the FaceLivenessDetector component */
-body{
+
+body {
   overflow-y: hidden;
 }
-.liveness-detector-check{
+
+
+.liveness-detector-check {
   margin-top: 140px;
   gap: 5px !important;
 }
+
 
 .liveness-container {
   width: 100%;          
@@ -34,9 +37,10 @@ body{
   }
 }
 
+
 .liveness-container .aws-liveness-warning {
   position: absolute;
-  top: 10px;           
+  top: 10px;               
   left: 0;
   right: 0;
   text-align: center;
@@ -47,11 +51,28 @@ body{
   z-index: 1000;      
 }
 
+
+@media (max-width: 480px) {
+  .liveness-container .aws-liveness-warning {
+    top: 15px;           
+    font-size: 12px;       
+    padding: 6px;
+  }
+}
+
+
 .liveness-container iframe, 
 .liveness-container video {
   width: 100%;
   height: 100%;
   object-fit: cover;   
+}
+
+
+.amplify-button--primary {
+  background-color: #2f80ed;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 @media (max-width: 360px) {
