@@ -60,6 +60,10 @@ body {
   }
   .amplify-liveness-start-screen-warning {
     margin-top: 55px;
+    font-size: smaller;
+  }
+  .amplify-alert__heading{
+    font-size: small;
   }
   .amplify-liveness-toast__message {
     font-size: medium;

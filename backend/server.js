@@ -65,7 +65,7 @@ app.get("/api/get-liveness-results", async (req, res) => {
     };
 
     const data = await rekognition.getFaceLivenessSessionResults(params).promise();
-    res.json({ data, isLive: data.Confidence > 90 });
+    res.json({ data, isLive: data.Confidence > 75 });
   } catch (error) {
     console.error("Error fetching results:", error);
     res.status(500).json({ error, error: error.message });
@@ -73,6 +73,8 @@ app.get("/api/get-liveness-results", async (req, res) => {
 });
 
 
+
+// for detect-faces command request with image as param
 app.post("/api/get-liveness-results", async (req, res) => {
     try {
         const { sessionId, image } = req.body;
