@@ -13,7 +13,7 @@ export function LivenessComponent() {
     region:'us-east-1'
   }
   // const baseUrl = "http://localhost:5000"
-  const baseUrl = "https://aws-facerekog-react-backend.vercel.app"
+  const baseUrl = process.env.REACT_APP_BE_BASE_URL
   const toastConfig = {
     position: "top-center",
     autoClose: 3000,

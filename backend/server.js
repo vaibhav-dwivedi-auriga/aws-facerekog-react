@@ -6,8 +6,7 @@ const cors = require("cors");
 const app = express();
 const port = 5000;
 const allowedOrigins = [
-  "https://aws-facerekog-react-ljtj-vaibhav-dwivedis-projects-b50f3d64.vercel.app",
-  "https://aws-facerekog-react-ljtj.vercel.app",
+  process.env.FE_BASE_URL,
   "http://localhost:3000"
 ]
 
@@ -15,7 +14,7 @@ app.use(cors({
   origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: [
-    ['Access-Control-Allow-Origin', 'https://aws-facerekog-react-ljtj.vercel.app'],
+    ['Access-Control-Allow-Origin', process.env.FE_BASE_URL],
     ['Access-Control-Allow-Credentials', 'true'],
     ['Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'],
     ['Access-Control-Allow-Headers', 'Content-Type, Authorization'],
