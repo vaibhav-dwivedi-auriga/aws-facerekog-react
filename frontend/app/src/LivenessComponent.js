@@ -45,7 +45,6 @@ export function LivenessComponent() {
     try {
       const response = await fetch(`${baseUrl}/api/get-liveness-results?sessionId=${sessionId}`);
       const data = await response.json();
-      console.log(data);
       const requestPayload = {
         sessionId
       }
@@ -55,14 +54,11 @@ export function LivenessComponent() {
       );
 
       if (data.isLive) {
-        console.log("User is live");
         toast.success('User is live!',toastConfig);
-        // 
         setTimeout(()=>window.location.reload(),3500);
       } else {
-        console.log("User is not live");
         toast.error('User is not live!', toastConfig);
-      setTimeout(()=>window.location.reload(),3500);
+        setTimeout(()=>window.location.reload(),3500);
 
       }
     } catch (error) {
