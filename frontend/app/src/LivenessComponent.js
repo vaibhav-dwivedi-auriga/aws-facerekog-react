@@ -18,7 +18,6 @@ export function LivenessComponent() {
 
  
   const baseUrl = apiEndpoint;
-  console.log(baseUrl);
 
   const toastConfig = {
     position: "top-center",
@@ -83,9 +82,9 @@ export function LivenessComponent() {
           sessionId={sessionId}
           region="us-east-1"
           onAnalysisComplete={handleAnalysisComplete}
-          config={{
-            credentialProvider: async () => awsConfig,
-          }}
+          // config={{
+          //   credentialProvider: async () => awsConfig,
+          // }}
           onError={(error) => {
             console.error(error);
             window.location.reload()
