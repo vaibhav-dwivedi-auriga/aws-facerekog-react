@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaceLivenessDetector } from "@aws-amplify/ui-react-liveness";
 import { ThemeProvider, Loader } from "@aws-amplify/ui-react";
 import { ToastContainer, toast } from 'react-toastify';
+import apiEndpoint from "./config";
 import './LivenessComponent.css';
 
 export function LivenessComponent() {
@@ -13,7 +14,11 @@ export function LivenessComponent() {
     region:'us-east-1'
   }
   // const baseUrl = "http://localhost:5000"
-  const baseUrl = process.env.REACT_APP_BE_BASE_URL
+  // const baseUrl = process.env.REACT_APP_BASE_URL
+
+ 
+  const baseUrl = apiEndpoint;
+
   const toastConfig = {
     position: "top-center",
     autoClose: 3000,

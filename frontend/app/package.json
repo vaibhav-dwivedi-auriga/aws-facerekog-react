@@ -17,9 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:local": "cross-env REACT_APP_ENV=local react-scripts start",
+    "start:staging": "cross-env REACT_APP_ENV=staging react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build:staging": "cross-env REACT_APP_ENV=staging react-scripts build",
+    "build:production": "cross-env REACT_APP_ENV=production react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +40,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "@tensorflow/tfjs-core": "4.22.0",
+    "@tensorflow/tfjs-backend-webgl": "4.22.0",
+    "@tensorflow/tfjs-backend-cpu": "4.22.0",
+    "@tensorflow-models/face-detection": "1.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
