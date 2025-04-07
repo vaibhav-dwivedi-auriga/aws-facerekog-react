@@ -18,6 +18,7 @@ export function LivenessComponent() {
 
  
   const baseUrl = apiEndpoint;
+  console.log(baseUrl);
 
   const toastConfig = {
     position: "top-center",
